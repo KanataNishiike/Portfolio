@@ -1,0 +1,205 @@
+<!doctype html>
+<html lang="ja" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Fashion Collection</title>
+    <meta mame="description" content="fashion page">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="css/fashion.css" type="text/css">
+    <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+    <link rel="stylesheet" href="/resources/demos/style.css">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+    <link rel="stylesheet" type="text/css" href="css/slick.css">
+    <link rel="stylesheet" type="text/css" href="css/slick-theme.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/bxslider/4.2.12/jquery.bxslider.min.js"></script>
+    <script type="text/javascript" src="js/slick.js"></script>
+
+    <script>
+      // 写真スライドの設定
+      $(function() {
+        $('.slick-box ul').slick({
+          slidesToShow:3,
+          slidesToScroll:1,
+          dots:true,
+          autoplay: true,
+          autoplaySpeed: 1200,
+        });
+      });
+    </script>
+    <script>
+      // Youtubeのスライド設定
+      $(function(){
+        var slider = $('#slider').bxSlider({
+          auto: true,
+          pause: 5000,
+          speed: 1000,
+          mode: 'horizontal',
+          prevText: &larr;,
+          nextText: &rarr;,
+          pager: true,
+          pagerCustom: '.container'
+        });
+      });
+    </script>
+  </head>
+  <body>
+    <div class="top">
+      <div class="image">
+        <div class="overlay">
+        <p class="text1">Fashion Collection<p>
+        <p class="text2">Black has it all. White too.</p>
+        <p class="text3">Their beauty is absolute. It is the perfect harmony.</p>
+        <p class="text4">- Coco Chanel -</p>
+      </div>
+      </div>
+    </div>
+    <div class="menu-youtube">
+      <h3>YouTube</h3>
+    </div>
+    <div class="youtube-f">
+      <div class="youtube-set">
+        <div class="youtube">
+          <ul class="bxslider" id="slider">
+            <li style="margin-top:50px;"><iframe width="100%" height="500" src="https://www.youtube.com/embed/s4_NwL9Gfww" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></li>
+            <li style="margin-top:50px;"><iframe width="100%" height="500" src="https://www.youtube.com/embed/AXOfw9x-hVw" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></li>
+            <li style="margin-top:50px;"><iframe width="100%" height="500" src="https://www.youtube.com/embed/JLecRzyvy44" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></li>
+            <li style="margin-top:50px;"><iframe width="100%" height="500" src="https://www.youtube.com/embed/DdYmZVokFVw" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></li>
+            <li style="margin-top:50px;"><iframe width="100%" height="500" src="https://www.youtube.com/embed/bo3nYn9hp8E" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></li>
+            <li style="margin-top:50px;"><iframe width="100%" height="500" src="https://www.youtube.com/embed/MlPsweCQnPU" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></li>
+          </ul>
+        </div>
+        <div class="youtube-guide">
+          <div class="guide-box">
+            <ul id="thumbnail" class="container" style="position:relative;">
+              <li><a data-slide-index="0" href><img src="image/youtube1.png"></a></li>
+              <li><a data-slide-index="1" href><img src="image/youtube2.png"></a></li>
+              <li><a data-slide-index="2" href><img src="image/youtube3.png"></a></li>
+              <li><a data-slide-index="3" href><img src="image/youtube4.png"></a></li>
+              <li><a data-slide-index="4" href><img src="image/youtube5.png"></a></li>
+              <li><a data-slide-index="5" href><img src="image/youtube6.png" style="margin-bottom:40px;"></a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="menu-photo">
+      <h3>Photo</h3>
+    </div>
+    <div class="photo-f">
+      <div class="tab_wrap">
+	      <input id="tab1" type="radio" name="tab_btn" checked>
+	      <input id="tab2" type="radio" name="tab_btn">
+	      <input id="tab3" type="radio" name="tab_btn">
+        <input id="tab4" type="radio" name="tab_btn">
+
+     	  <div class="tab_area">
+		      <label class="tab1_label" for="tab1">Spring</label>
+          <label class="tab2_label" for="tab2">Summer</label>
+		      <label class="tab3_label" for="tab3">Fall</label>
+          <label class="tab4_label" for="tab4">Winter</label>
+	      </div>
+
+	      <div class="panel_area">
+        <div id="panel1">
+          <div class="tab_panel slick-box">
+            <ul>
+              <li><img src="image/spring-men1.jpg" width="200" height="250" style="margin:auto; margin-top:30px;"></li>
+              <li><img src="image/spring-men2.jpg" width="200" height="250" style="margin:auto; margin-top:30px;"></li>
+              <li><img src="image/spring-men3.jpg" width="200" height="250" style="margin:auto; margin-top:30px;"></li>
+              <li><img src="image/spring-men4.jpg" width="200" height="250" style="margin:auto; margin-top:30px;"></li>
+              <li><img src="image/spring-men5.jpg" width="200" height="250" style="margin:auto; margin-top:30px;"></li>
+              <li><img src="image/spring-men6.jpg" width="200" height="250" style="margin:auto; margin-top:30px;"></li>
+              <li><img src="image/spring-men7.jpg" width="200" height="250" style="margin:auto; margin-top:30px;"></li>
+            </ul>
+            <ul>
+              <li><img src="image/spring-women1.jpg" width="200" height="250" style="margin:auto; margin-top:70px;"></li>
+              <li><img src="image/spring-women2.jpg" width="200" height="250" style="margin:auto; margin-top:70px;"></li>
+              <li><img src="image/spring-women3.jpg" width="200" height="250" style="margin:auto; margin-top:70px;"></li>
+              <li><img src="image/spring-women4.jpg" width="200" height="250" style="margin:auto; margin-top:70px;"></li>
+              <li><img src="image/spring-women5.jpg" width="200" height="250" style="margin:auto; margin-top:70px;"></li>
+              <li><img src="image/spring-women6.jpg" width="200" height="250" style="margin:auto; margin-top:70px;"></li>
+              <li><img src="image/spring-women7.jpg" width="200" height="250" style="margin:auto; margin-top:70px;"></li>
+            </ul>
+          </div>
+        </div>
+
+          <div id="panel2">
+            <div class="tab_panel slick-box">
+              <ul>
+              <li><img src="image/summer-men1.jpg" width="200" height="250" style="margin:auto; margin-top:30px;"></li>
+              <li><img src="image/summer-men2.jpg" width="200" height="250" style="margin:auto; margin-top:30px;"></li>
+              <li><img src="image/summer-men3.jpg" width="200" height="250" style="margin:auto; margin-top:30px;"></li>
+              <li><img src="image/summer-men4.jpg" width="200" height="250" style="margin:auto; margin-top:30px;"></li>
+              <li><img src="image/summer-men5.jpg" width="200" height="250" style="margin:auto; margin-top:30px;"></li>
+              <li><img src="image/summer-men6.jpg" width="200" height="250" style="margin:auto; margin-top:30px;"></li>
+              </ul>
+              <ul>
+              <li><img src="image/summer-women1.jpg" width="200" height="250" style="margin:auto; margin-top:70px;"></li>
+              <li><img src="image/summer-women2.jpg" width="200" height="250" style="margin:auto; margin-top:70px;"></li>
+              <li><img src="image/summer-women3.jpg" width="200" height="250" style="margin:auto; margin-top:70px;"></li>
+              <li><img src="image/summer-women4.jpg" width="200" height="250" style="margin:auto; margin-top:70px;"></li>
+              <li><img src="image/summer-women5.jpg" width="200" height="250" style="margin:auto; margin-top:70px;"></li>
+              <li><img src="image/summer-women6.jpg" width="200" height="250" style="margin:auto; margin-top:70px;"></li>
+              </ul>
+            </div>
+          </div>
+
+          <div id="panel3">
+            <div class="tab_panel slick-box">
+              <ul>
+              <li><img src="image/fall-men1.jpg" width="200" height="250" style="margin:auto; margin-top:30px;"></li>
+              <li><img src="image/fall-men2.jpg" width="200" height="250" style="margin:auto; margin-top:30px;"></li>
+              <li><img src="image/fall-men3.jpg" width="200" height="250" style="margin:auto; margin-top:30px;"></li>
+              <li><img src="image/fall-men4.jpg" width="200" height="250" style="margin:auto; margin-top:30px;"></li>
+              </ul>
+              <ul>
+              <li><img src="image/fall-women1.jpg" width="200" height="250" style="margin:auto; margin-top:70px;"></li>
+              <li><img src="image/fall-women2.jpg" width="200" height="250" style="margin:auto; margin-top:70px;"></li>
+              <li><img src="image/fall-women3.jpg" width="200" height="250" style="margin:auto; margin-top:70px;"></li>
+              <li><img src="image/fall-women4.jpg" width="200" height="250" style="margin:auto; margin-top:70px;"></li>
+              </ul>
+            </div>
+		      </div>
+
+          <div id="panel4">
+            <div class="tab_panel slick-box">
+              <ul>
+              <li><img src="image/winter-men1.jpg" width="200" height="250" style="margin:auto; margin-top:30px;"></li>
+              <li><img src="image/winter-men2.jpg" width="200" height="250" style="margin:auto; margin-top:30px;"></li>
+              <li><img src="image/winter-men3.jpg" width="200" height="250" style="margin:auto; margin-top:30px;"></li>
+              <li><img src="image/winter-men4.jpg" width="200" height="250" style="margin:auto; margin-top:30px;"></li>
+              </ul>
+              <ul>
+              <li><img src="image/winter-women1.jpg" width="200" height="250" style="margin:auto; margin-top:70px;"></li>
+              <li><img src="image/winter-women2.jpg" width="200" height="250" style="margin:auto; margin-top:70px;"></li>
+              <li><img src="image/winter-women3.jpg" width="200" height="250" style="margin:auto; margin-top:70px;"></li>
+              <li><img src="image/winter-women4.jpg" width="200" height="250" style="margin:auto; margin-top:70px;"></li>
+              </ul>
+            </div>
+          </div>
+	      </div>
+      </div>
+    </div>
+<footer>
+  <div class="left">
+    <ul>
+      <li><a href="index.html">TOP</a></li>
+      <li><a href="blog.php">Blog</a></li>
+    </ul>
+  </div>
+  <div class="right">
+    <ul>
+      <li><a href="">Book</a></li>
+    </ul>
+  </div>
+</footer>
+  </body>
+</html>

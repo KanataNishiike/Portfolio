@@ -1,0 +1,67 @@
+body{
+  background-color: black;
+  color:white;
+  font-family: 'Century', serif;
+  font-size: 30px;
+}
+p,h1{
+  margin:0;
+}
+.mail-form{
+  text-align: center;
+  margin-top: 60px;
+}
+input #text{
+  padding-top: 20px;
+}
+input:focus,
+textarea:focus{
+  outline:0;
+  background-color: #99FFFF;
+}
+
+input#submit_button{
+  width:220px;
+  height: 50px;
+  padding: 20px 40px 50px 40px;
+  background-color: white;
+  color: black;
+  border-radius: 50px;
+  font-family: 'Century',serif;
+  margin-top: 20px;
+  font-size: 25px;
+}
+input#submit_button:hover{
+  cursor: pointer;
+  border-color: white;
+  background-color: black;
+  color: white;
+  border-width: 4px;
+}
+textarea{
+  margin-top: 10px;
+  font-family: 'Century',serif;
+  width: 400px;
+  height:100px;
+  border-radius: 10px;
+}
+input{
+  margin-top: 10px;
+  margin-bottom: -10px;
+  width: 250px;
+  height:35px;
+  border-radius: 10px;
+  font-family: 'Century',serif;
+}
+div.error_message{
+    width:250px;
+    position:absolute;
+    padding:1px;
+    border-radius:5px;
+    background-color:white;
+    line-height:17.5px;
+    color:black;
+    font-size:13px;
+    text-align:center;
+    z-index: 5;
+}

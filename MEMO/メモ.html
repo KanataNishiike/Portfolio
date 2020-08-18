@@ -1,0 +1,185 @@
+・OpenJTalk
+Windowsで音声合成Open JTalk
+https://qiita.com/mkgask/items/0bf9c26dc96e7b0b45ac
+
+１　Visual Studioのコマンドプロンプトを起動。
+２　C:\open_jtalk\bin　に移動。
+３　コマンドプロンプトで
+　　「open_jtalk.exe -m nitech_jp_atr503_m001.htsvoice -x dic -ow output.wav input.txt」を実行。
+　　　　　exe起動　　　　　　　ボイス　　　　　　　　　　　　　辞書　　音声ファイル　　再生文章
+
+
+・OpenJTalk & python
+「OpenJTalk + python で日本語テキストを発話」
+https://qiita.com/kkoba84/items/b828229c374a249965a9
+
+
+
+・OpenJTalk【シェル操作ver】
+1 サーバ上で
+　　[wataru@localhost ~]$ time jsay_make "こんにちは。こちらはユニキャストサーバーです。" /usr/local/src/hello.wav
+2 CyberDuckから音声ファイルをインストール
+3 再生
+
+～音声ファイル生成～
+１．テキスト直接入力なら、jsay_makeの設定で「echo」にし、
+　 time jsay_make "テキスト文" ~/XXX.wav(音声ファイル名)
+２．ファイルからの読み取りなら、jsay_makeの設定で「cat」にし、
+   time jsay_make ~/XXX.text(ファイル名) ~/XXX.wav(音声ファイル名)
+
+・OpenJTalk【python ver】
+1 MEMO/open.py のtextを編集
+2 CyberDuckにUp
+3 サーバ上で「cd /usr/local/src」に移動、コード「python open.py」。
+4 CyberDuckから音声ファイルをインストール
+5 再生
+
+
+・じょうるり市
+top > demo.cms2017 > _themes > js >navigation.js & common.js
+
+・WebScraping
+
+
+
+
+～中間報告～
+・今後の方針
+１： Joruriを参考に進める場合
+　１：本家的にはテキストを抽出して音声データを生成しているようだ( ﾟДﾟ)・・・。
+　２：Ruby、Ruby and Railsで書かれ、Ruby系の勉強になる。
+　３：難しいけれど、一応ソースコードは存在する。
+Q Ruby系の勉強になるがよいか？(Rubyで意図を組んでphpかpythonで書き直すのは難しい...)
+Q フレームワークに当たるRailsの勉強は今の段階で適しているか？
+
+２： 制作済み音声ファイル＆DBの場合
+　１： Mysqlに予め作成した音声データを登録する方法。
+　２： pythonファイルにテキストを書き込む、DBからblog.phpに表示する機能。
+　３： 自分で推測し、考えて制作するしかない。
+
+
+
+
+
+～テキストを読み込む方法～
+１DBから取る。
+→CMSの中身は<p>とかなるかも。。。
+２HTML　CGI
+
+echo file
+
+～シェル　パターン～
+PHPのexec関数で外部命令。
+→サーバのシェルに直接書き込むときと同じように、
+<?php echo 音声ファイル; ?>
+
+
+１　PHPのexec関数でシェルに命令(音声ファイル作成)
+２　DBに音声ファイルを移す。
+３　echo 音声ファイル;
+
+
+
+～jsay_make～
+文字列をファイル名渡す。
+catに置き換える。
+
+
+catコマンド
+ファイルの中身を表示
+
+
+
+検索ワード
+OpenJtalk 長文読み上げ
+標準入力 標準出力
+
+
+
+
+
+
+
+
+/usr/local/bin/jsay_make: 21 行: 10208 終了                  cat "$1"
+     10209                       | /usr/bin/tr -d '\n'
+     10210 Segmentation fault      (コアダンプ) | open_jtalk -x ${DIC} -m ${VOICE} -ow ${TMPFILE}
+
+
+【8/30】
+・リダイレクト　標準入力／標準出力
+php webscraping.php > a
+aというファイルに、webscraping.phpの実行結果を落とす。
+
+例：php webscraping.php > /var/www/html/mp3/ppp.txt
+
+
+・phpコマンド
+Linux(Unix)上で動くのはシェルコマンドだが、
+「php index.php」とすると、Linux上でindex.phpの中身が動く。
+
+
+ls　コマンド
+file　コマンド
+DOM
+
+
+
+
+【9/9】～質問リスト～
+
+今までの音声ファイル生成について
+１　ws-blog.phpでウェブスクレイピング＆echoで出力
+２　ws-blog.php > ~/×××.text　でテキストファイル作成
+３　jsay_make ~/×××.txt ~/○○○.mp3　で音声ファイル作成
+
+
+ws.php編
+１　phantomjsでajax(JS)部分含むHTMLを抽出できた。
+２　ws.phpでecho $html;にしてHTMLを作成し、php ws.php > ~/×××.textをしようとするも、できず。
+　　→DOM丸出しのHTMLだから？精製必要？
+３　HTMLを抜き取った$htmlで、<p>など部分部分をどう抜き出すか？
+
+
+ws.article編
+１　サイトからURLを送って貰う(POST送信)事でテキストを作成する仕組み。　
+２　サイトで送信ボタンを押すと、ページが切り替わりテキスト自体は表示される。
+→<form action="">を使用すると必ずページ遷移するので、ajaxで工夫。
+
+３　exec関数でテキスト作成＆音声ファイル作成を加えると、データサイズが０に。
+　　(テキストサイズが０なので、そもそもテキスト化されていない。)
+→echoでテキストは生成出来ているが、exec関数を実行する段階では、
+ POSTの値が初期化されているのではないか？
+
+
+～課題～
+○１　ws-blog.phpでテキスト生成するも音声ファイルが作れないこと。
+○２　ws-article.phpにおいて、exec関数を使用してもPOSTを受け取ってないこと。
+３　ws.phpでHTMLから<p>など抜き出す方法。
+
+○４　音声ファイル作成における自動名前生成(各記事と結びつけるため)
+
+知りたい内容。
+ヒント、コマンド、調べる方法（GitHubなど）
+
+test
+ws-blog.phpにおいてsleep()で時間差を作る。
+→テキスト生成はできた、が音声ファイルが作れず。あと、コマンドプロンプトの処理画面が終わらない。
+
+
+
+9/17 メモ
+mecab.pyでblog.phpのルビ振りを行うと、phpなどコード部分が改行され機能しなくなった(blogxx.php)。
+test.pyでblogxx.phpの改行を消した結果がtestt.php。
+～残りミッション～
+１　改行などを正常化し、サイトとして表示されること
+　　１　mecab.pyでファイルを読み込んだ時が原因
+　　２　Mecabで一文字ずつ分析した際が原因
+　　→原因を突き止めれば、対処も変わる。
+２　切り替えの制作
+
+
+9/18
+１は、改行は読み込み時ではない。
+改行はprint()によるものだった。
+(一文字ずつ改行するから、縦に広がる。)

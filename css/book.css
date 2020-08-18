@@ -1,0 +1,189 @@
+p , ul{
+  text-decoration: none;
+  list-style: none;
+  margin:0;
+}
+select{
+  padding:10px;
+}
+#result [class*="hidden-"] {display: none;}
+
+.search-box input{
+  display:none;
+}
+
+
+#header{
+  background: #003399;
+  text-align: center;
+  width: 100%;
+  position: fixed;
+  color: white;
+  z-index: 9999;
+  top:0;
+  font-family: 'serif' , serif;
+}
+#header .wrap{
+  padding-top: 7px;
+}
+.wrap{
+  box-sizing: border-box;
+  margin:0 auto;
+}
+.wrap h1{
+  letter-spacing: 7px;
+}
+.displaynone{
+  display: none;
+  transition: .5s;
+}
+
+.search-box li{
+  display: inline-block;
+  margin-bottom: 10px;
+  font-weight: bold;
+  font-size: 23px;
+  padding: 0 6px;
+  text-decoration: none;
+}
+.desk{
+  width: auto;
+  background-color: #6495ED;
+  padding-top: 100px;
+}
+.number{
+  padding-top: 160px;
+  padding-left: 50%;
+  text-align: center;
+}
+
+.is-hide{
+  display: none;
+}
+.hide{
+  display: none;
+}
+
+.box{
+  width: 70%;
+  background-color: white;
+  margin-right: auto;
+  margin-left: auto;
+  border-radius: 70px;
+  margin-top:40px;
+  padding-top: 10px;
+}
+.box h3{
+  text-align: right;
+  padding-right: 5%;
+  padding-top: 2%;
+  font-family: serif;
+}
+.overview h2{
+  font-size:30px;
+  padding-top:60px;
+  padding-left: 70px;
+}
+.overview p{
+  padding-top:20px;
+  padding-bottom: 100px;
+  padding-left: 50px;
+  padding-right: 50px;
+  font-size: 20px;
+}
+
+
+.book-intro{
+  width: 80%;
+  height:400px;
+  margin-right: auto;
+  margin-left:auto;
+  margin-top: 40px;
+  background-color: #AAFFFF;
+}
+
+
+.book-photo{
+  float: left;
+  padding-top:5%;
+  padding-right: 9%;
+  padding-left:8%;
+}
+
+.book-text{
+  float: left;
+  padding-top: 10%;
+  padding-left: 5%;
+}
+
+.book-text p{
+  font-size: 220%;
+  font-family: 'HG行書体' ,monospace;
+}
+
+.page{
+  width: 50%;
+  height:240px;
+  margin-right: auto;
+  margin-left: auto;
+  border-radius: 70px;
+  padding-top: 10px;
+  text-align: center;
+
+}
+.page-navi{
+  padding-top: 60px;
+  font-size: 30px;
+  text-decoration: none;
+  color: white;
+}
+.page-navi a{
+  color:white;
+  text-decoration: none;
+  font-family: 'HG行書体' ,monospace;
+}
+.page-navi p{
+  font-family: 'HG行書体' ,monospace;
+
+}
+
+.f-space{
+  width: 100%;
+  height:200px;
+  background-color: #003399;
+  color:white;
+}
+.f-left{
+  float: left;
+  width: 50%;
+  text-align: left;
+  padding-left: 25%;
+  margin-top:35px;
+}
+.f-left a{
+  color:white;
+  text-decoration: none;
+}
+.f-space li{
+  font-size:25px;
+  padding-top:5px;
+  font-family: 'selif' ,serif;
+}
+.f-right{
+  float: left;
+  width: 50%;
+  padding-left: 13%;
+  margin-top:30px;
+}
+
+
+input[id="novel"]:checked ~ main .box .l1{
+    visibility:hidden;
+    position:absolute;
+}
+input[id=""]:checked ~ main .box .l2{
+     visibility:hidden;
+     position:absolute;
+}
+input[id="hidden"]:checked ~ main .box .l3{
+}

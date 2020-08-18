@@ -1,0 +1,108 @@
+body{
+  background-color: yellow;
+}
+body:before{
+position: fixed;
+top: 0;
+left: 0;
+width: 100%;
+height: 100%;
+content: '';
+display: block;
+background: url(../image/bg_body.png) center ;
+background-repeat: repeat-y;
+background-size: 1570px 1010px;
+z-index: 0;
+}
+a{
+  color:black;
+  text-decoration: none;
+  cursor: pointer;
+}
+ol{
+  padding: 0;
+}
+ol li{
+  padding-top: 25px;
+}
+
+.list{
+  text-align: center;
+  text-decoration: none;
+  margin: 10px auto;
+  z-index: 5;
+  position: relative;
+
+}
+
+.list ol{
+  list-style: none;
+}
+
+.code{
+  text-align: center;
+  margin-top: 100px;
+  z-index: 5;
+  position: relative;
+}
+
+.code a{
+  color:black;
+  text-decoration-line: none;
+
+}
+ol li .btn1 {
+  display: inline-block;
+  padding: 0.5em 1em;
+  text-decoration: none;
+  background: #f7f7f7;
+  border-left: solid 6px #ff7c5c;/*左線*/
+  color: #ff7c5c;/*文字色*/
+  font-weight: bold;
+  box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.29);
+}
+ol li .btn2 {
+  display: inline-block;
+  padding: 0.5em 1em;
+  text-decoration: none;
+  background: #f7f7f7;
+  border-left: solid 6px #008000;/*左線*/
+  color: #008000;/*文字色*/
+  font-weight: bold;
+  box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.29);
+}
+ol li .btn3 {
+  display: inline-block;
+  padding: 0.5em 1em;
+  text-decoration: none;
+  background: #f7f7f7;
+  border-left: solid 6px #000066;/*左線*/
+  color: #000066;/*文字色*/
+  font-weight: bold;
+  box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.29);
+}
+ol li .btn4 {
+  display: inline-block;
+  padding: 0.5em 1em;
+  text-decoration: none;
+  background: #f7f7f7;
+  border-left: solid 6px #FF69A3;/*左線*/
+  color: #FF69A3;/*文字色*/
+  font-weight: bold;
+  box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.29);
+}
+ol li .btn5 {
+  display: inline-block;
+  padding: 0.5em 1em;
+  text-decoration: none;
+  background: #f7f7f7;
+  border-left: solid 6px #0000FF;/*左線*/
+  color: #0000FF;/*文字色*/
+  font-weight: bold;
+  box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.29);
+}
+ol li .btn1:active,.btn2:active,.btn3:active,.btn4:active
+ {
+  box-shadow: inset 0 0 2px rgba(128, 128, 128, 0.1);
+  transform: translateY(2px);
+}

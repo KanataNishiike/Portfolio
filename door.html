@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head　lang="Ja">
+  <!-- Windows利用者のversion違いの回収 -->
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <!-- 表示領域 -->
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Official Website</title>
+  <meta name="description">
+  <meta charset="utf-8">
+  <link rel="stylesheet" href="css/door.css" type="text/css">
+  <script src="js/jquery.js"></script>
+  <script src="js/jquery-ui.js"></script>
+</head>
+<body>
+  <div class="door">
+    <a href="./index.html">
+    <script>
+      var imglist = new Array(
+        "image/bass_guitar.jpg",
+        "image/cat.jpg",
+        "image/town.jpg",
+        "image/piano.jpg" );
+      var selectnum = Math.floor(Math.random() * imglist.length);
+      var output = "<img src=" + imglist[selectnum] + " style=width:70%;>";
+      document.write(output);
+    </script>
+    </a>
+  </div>
+</body>
+</html>

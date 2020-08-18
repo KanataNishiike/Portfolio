@@ -1,0 +1,179 @@
+@charset "UTF-8";
+
+body {
+	font-size:14px;
+	font-family:"メイリオ",Meiryo,"ヒラギノ角ゴ Pro W3","Hiragino Kaku Gothic Pro",Osaka,"ＭＳ Ｐゴシック","MS PGothic",sans-serif;
+}
+
+/* li形式 */
+.list {
+	width:100%;
+	margin:20px auto;
+}
+
+.list ul {
+	overflow:hidden;
+	margin:0;
+	padding:0;
+}
+
+.list li {
+	display:block;
+	float:left;
+	width:23%;
+	height:120px;
+	margin:1%;
+	color:#fff;
+	font-size:48px;
+	line-height:120px;
+	text-align:center;
+	vertical-align:middle;
+	list-style:none;
+	background:#ccc;
+}
+
+.list .pager {
+	clear:both;
+	margin:30px 0;
+	text-align:center;
+}
+
+.list .pager span {
+	margin:5px;
+	padding:5px 8px;
+	color:#000;
+	background:#f8f8f8;
+	border:1px solid #000;
+}
+.list .pager span:hover {
+	cursor:pointer;
+	background:#999;
+}
+
+.list .pager span.current {
+	color:#000;
+	background:#359bef;
+}
+.list .pager span.current:hover {
+	cursor:default;
+}
+
+.list .pager span.invalid {
+	display:none;
+}
+.list .pager span.invalid:hover {
+	cursor:default;
+}
+
+.list .pager span.ellipsis {
+	color:#000;
+	background:none;
+	border:none;
+}
+.list .pager span.ellipsis:hover {
+	cursor:default;
+}
+
+.list .pager span.first,
+.list .pager span.last,
+.list .pager span.prev,
+.list .pager span.next {
+	background:#ddd;
+}
+
+.list .pager span.first:hover,
+.list .pager span.last:hover,
+.list .pager span.prev:hover,
+.list .pager span.next:hover {
+	background:#999;
+}
+
+.list .pageNum {
+	margin:30px 0;
+	text-align:center;
+}
+
+/* div形式 */
+.list2 {
+	width:100%;
+	margin:20px auto;
+}
+
+.list2 .inner {
+	overflow:hidden;
+}
+
+.list2 .inner div {
+	display:block;
+	float:left;
+	width:23%;
+	height:120px;
+	margin:1%;
+	color:#fff;
+	font-size:48px;
+	line-height:120px;
+	text-align:center;
+	vertical-align:middle;
+	background:#999;
+}
+
+.list2 .pager {
+	clear:both;
+	margin:30px 0;
+	text-align:center;
+}
+
+.list2 .pager span {
+	margin:5px;
+	padding:5px 8px;
+	color:#000;
+	background:#f8f8f8;
+	border:1px solid #000;
+}
+.list2 .pager span:hover {
+	cursor:pointer;
+	background:#999;
+}
+
+.list2 .pager span.current {
+	color:#000;
+	background:#ca071e;
+}
+.list2 .pager span.current:hover {
+	cursor:default;
+}
+
+.list2 .pager span.invalid {
+	display:none;
+}
+.list2 .pager span.invalid:hover {
+	cursor:default;
+}
+
+.list2 .pager span.ellipsis {
+	color:#000;
+	background:none;
+	border:none;
+}
+.list2 .pager span.ellipsis:hover {
+	cursor:default;
+}
+
+.list2 .pager span.first,
+.list2 .pager span.last,
+.list2 .pager span.prev,
+.list2 .pager span.next {
+	background:#ddd;
+}
+
+.list2 .pager span.first:hover,
+.list2 .pager span.last:hover,
+.list2 .pager span.prev:hover,
+.list2 .pager span.next:hover {
+	background:#999;
+}
+
+.list2 .pageNum {
+	margin:30px 0;
+	text-align:center;
+}

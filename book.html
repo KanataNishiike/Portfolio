@@ -1,0 +1,566 @@
+<!doctype html>
+<html lang="ja" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>千夜一夜物語</title>
+    <meta mame="description" content="Blogページです">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+     <link href="css/bootstrap.min.css" rel="stylesheet">
+     <script type="text/javascript" src="js/jquery.js"></script>
+     <script type="text/javascript" src="js/jquery-ui.js"></script>
+     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="css/book.css" type="text/css">
+  </head>
+
+
+  <body>
+<script>
+var searchBox = '.search-box'; // 絞り込む項目を選択するエリア
+var listItem = '.list_item';   // 絞り込み対象のアイテム
+var hideClass = 'is-hide';     // 絞り込み対象外の場合に付与されるclass名
+
+$(function() {
+  // 絞り込み項目を変更した時
+  $(document).on('change', searchBox + ' input', function() {
+      search_filter();
+  });
+});
+
+/**
+* リストの絞り込みを行う
+*/
+function search_filter() {
+  // 非表示状態を解除
+  $(listItem).removeClass(hideClass);
+  for (var i = 0; i < $(searchBox).length; i++) {
+      var name = $(searchBox).eq(i).find('input').attr('name');
+      // 選択されている項目を取得
+      var searchData = get_selected_input_items(name);
+      // 選択されている項目がない、またはALLを選択している場合は飛ばす
+      if(searchData.length === 0 || searchData[0] === '') {
+          continue;
+      }
+      // リスト内の各アイテムをチェック
+      for (var j = 0; j < $(listItem).length; j++) {
+          // アイテムに設定している項目を取得
+          var itemData = $(listItem).eq(j).data(name);
+          // 絞り込み対象かどうかを調べる
+          if(searchData.indexOf(itemData) === -1) {
+              $(listItem).eq(j).addClass(hideClass);
+          }
+      }
+  }
+}
+/**
+* inputで選択されている値の一覧を取得する
+* @param  {String} name 対象にするinputのname属性の値
+* @return {Array}       選択されているinputのvalue属性の値
+*/
+function get_selected_input_items(name) {
+  var searchData = [];
+  $('[name=' + name + ']:checked').each(function() {
+      searchData.push($(this).val());
+  });
+  return searchData;
+}
+</script>
+
+
+<script>
+  var listItem = '.list_item';
+  var zhideClass = 'hide';     // 絞り込み対象外の場合に付与されるclass名
+
+  function change_table(){
+//　要素抜き出し
+    var list_num_elm = document.getElementById('list-num');
+    var list_table_elm = document.getElementById('list-table');
+//　表示数所得
+　　var i_list_num = parseInt(list_num_elm.value);
+    var a_list_num = list_table_elm.children;
+//　全てのlist要素に対して処理
+    for (i=0; i<a_list_num.length; i++){
+      if(i > (i_list_num)){
+        $(a_list_num[i]).addClass(zhideClass);
+
+      } else {
+        $(a_list_num[i]).removeClass(zhideClass);
+      }
+    }
+    return true;
+  }
+</script>
+
+    <header id="header">
+      <div class="wrap">
+        <h1>千夜一夜物語</h1>
+      </div>
+      <div class="gnav">
+      <form>
+        <ul class="search-box" style="margin-top:10px;">
+          <li style="padding-right:7%;">評価</li>
+          <li><label><input type="checkbox" name="star" value="☆☆☆">☆ ☆ ☆</label></li>
+          <li> | </li>
+          <li><label><input type="checkbox" name="star" value="☆☆">☆ ☆</label></li>
+          <li> | </li>
+          <li style="padding-right:16%;"><label><input type="checkbox" name="star" value="☆">☆</label></li>
+        </ul>
+        <ul class="search-box">
+          <li style="padding-right:5%;">ジャンル</li>
+          <li><label><input type="checkbox" name="genre" value="novel">小説</label></li>
+          <li> | </li>
+          <li><label><input type="checkbox" name="genre" value="it">IT系</label></li>
+          <li> | </li>
+          <li><label><input type="checkbox" name="genre" value="trivia">雑学</label></li>
+          <li> | </li>
+          <li style="padding-right:15%;"><label><input type="checkbox" name="genre" value="magazine">雑誌</label></li>
+        </ul>
+      </form>
+    </div>
+    </header>
+
+    <main>
+      <form>
+        <div class="search-box">
+          <ul>
+          <li style="padding-right:7%;">評価</li>
+          <li><input type="checkbox" name="star" value="s3">☆ ☆ ☆</li>
+          <li> | </li>
+          <li><input type="checkbox" name="star" value="s2">☆ ☆</li>
+          <li> | </li>
+          <li style="padding-right:16%;"><input type="checkbox" name="star" value="s1">☆</li>
+        </ul>
+      </div>
+      <div class="search-box">
+        <ul>
+          <li style="padding-right:5%;">ジャンル</li>
+          <li><input type="checkbox" name="genre" value="novel">小説</li>
+          <li> | </li>
+          <li><label><input type="checkbox" name="genre" value="it">IT系</label></li>
+          <li> | </li>
+          <li><label><input type="checkbox" name="genre" value="trivia">雑学</label></li>
+          <li> | </li>
+          <li style="padding-right:15%;">
+          <label><input type="checkbox" name="genre" value="magazine">雑誌</label></li>
+        </ul>
+      </div>
+      </form>
+      <div class="desk">
+        <div class="number">
+          <form>
+            <select size="1" id="list-num" onchange="change_table();">
+              <option value="21" selected>表示選択</option>
+              <option value="0">1冊表示</option>
+              <option value="4">5冊表示</option>
+              <option value="9">10冊表示</option>
+              <option value="14">15冊表示</option>
+          　</select></form></div>
+
+    <div class="box">
+      <ul class="list" id="list-table">
+        <li class="list_item" data-star="☆☆☆" data-genre="it" data-genre="trivia" value="1">
+            <h3>1/1000冊目</h3>
+            <div class="book-intro">
+            <div class="book-photo">
+              <img src="image/degital-nature.jpg" width="200px" height="320px">
+            </div>
+            <div class="book-text"><p>デジタルネイチャー<br>
+            著：落合陽一<br>
+            IT系</p>
+            <p>☆ ☆ ☆</p>
+            </div>
+          </div>
+            <div class="overview">
+              <h2>計算機が“自然”になった人間社会</h2>
+              <p>　この本では、著者の落合陽一氏が考える、「人間社会の中でデジタル技術が”自然”に存在するように
+            なる未来社会について提言している（中略）。<br>
+            IT技術の発展による社会の変化、また”デジタルネイチャー”化した中でどのように”人間”が再定義されるか
+            を考えるのに面白い一冊。</p>
+            </div>
+          </li>
+
+          <li class="list_item" data-star="☆☆" data-genre="trivia" value="2">
+            <h3>2/1000冊目</h3>
+            <div class="book-intro">
+            <div class="book-photo">
+              <img src="image/kaden.jpg" width="200px" height="320px">
+            </div>
+            <div class="book-text"><p>風姿花伝<br>
+            著：世阿弥　訳：水野聡<br>
+            雑学</p>
+            <p>☆　☆</p>
+            </div>
+            </div>
+            <div class="overview">
+            <h2>能を極めた世阿弥による理論書</h2>
+            <p>　この本は、室町時代初期の猿楽師である世阿弥が書いた能の理論書である。（中略）<br>
+            一芸を極めた人物が紡ぐ言葉の重さが心地よく、様々な媒体・歴史を経て現在も存在する
+            "表現の妙"を知るのに面白い一冊。</p>
+            </div>
+          </li>
+          <li class="list_item" data-star="☆☆☆" data-genre="magazine" value="3">
+            <h3>3/1000冊目</h3>
+            <div class="book-intro">
+            <div class="book-photo">
+              <img src="image/nonno.jpg" width="200px" height="320px">
+            </div>
+            <div class="book-text"><p>non-no<br>
+            著：講談社<br>
+            雑誌</p>
+            <p>☆　☆　☆</p>
+            </div>
+            </div>
+            <div class="overview">
+            <h2>トレンド、その最前線</h2>
+            <p>　この雑誌では流行の服装について紹介されている。（中略）<br>
+            女性の服装傾向だけでなく、注目される男性俳優について知るのに面白い一冊。</p>
+          </div>
+        </li>
+        <li class="list_item" data-star="☆" data-genre="magazine" value="4">
+          <h3>4/1000冊目</h3>
+          <div class="book-intro">
+            <div class="book-photo">
+              <img src="image/nature.jpg" width="200px" height="320px">
+            </div>
+            <div class="book-text"><p>nature<br>
+            著：サイエンス出版社<br>
+            雑誌</p>
+            <p> ☆ </p>
+            </div>
+          </div>
+          <div class="overview">
+            <h2>サイエンス専門雑誌</h2>
+            <p>　この雑誌では、世界中のサイエンス論文について取り扱われている。（中略）<br>
+            少しずつ科学の力で世界の法則が明らかになる過程が面白い一冊。</p>
+          </div>
+        </li>
+        <li class="list_item" data-star="☆☆☆" data-genre="trivia" value="5">
+          <h3>5/1000冊目</h3>
+          <div class="book-intro">
+            <div class="book-photo">
+              <img src="image/sf.jpg" width="200px" height="320px">
+            </div>
+            <div class="book-text"><p>空想科学読本16<br>
+            著：柳田理科雄<br>
+            雑学</p>
+            <p>☆　☆　☆</p>
+            </div>
+          </div>
+          <div class="overview">
+            <h2>空想世界×物理法則の思考実験</h2>
+            <p>　この本では、アニメや漫画など空想上の世界を現実世界の物理法則で測る内容である。（中略）<br>
+            娯楽として面白い本である。</p>
+          </div>
+        </li>
+        <li class="list_item" data-star="☆" data-genre="novel" value="6">
+          <h3>6/1000冊目</h3>
+          <div class="book-intro">
+            <div class="book-photo">
+              <img src="image/sonotoki.jpg" width="200px" height="320px">
+            </div>
+            <div class="book-text"><p>そのときは彼によろしく<br>
+            著：市川拓司<br>
+            小説</p>
+            <p> ☆ </p>
+            </div>
+          </div>
+          <div class="overview">
+            <h2>昔との約束</h2>
+            <p>　この本は、「いま、会いに行きます」を手掛けた市川拓司の恋愛小説である。（中略）<br>
+            映画化もされているので、小説・映像の両方を楽しめる作品です。</p>
+          </div>
+        </li>
+        <li class="list_item" data-star="☆☆" data-genre="novel" value="7">
+          <h3>7/1000冊目</h3>
+          <div class="book-intro">
+            <div class="book-photo">
+              <img src="image/insite.jpg" width="200px" height="320px">
+            </div>
+            <div class="book-text"><p>インシテミル<br>
+            著：米澤穂信<br>
+            小説</p>
+            <p>☆　☆</p>
+            </div>
+          </div>
+          <div class="overview">
+            <h2>ある人文科学的実験の悲劇</h2>
+            <p>　この本は、米澤穂信による推理小説である。（中略）<br>
+            ミステリーや密室系が好きな人におすすめの一冊。</p>
+          </div>
+        </li>
+        <li class="list_item" data-star="☆☆☆" data-genre="it" value="8">
+            <h3>8/1000冊目</h3>
+            <div class="book-intro">
+            <div class="book-photo">
+              <img src="image/degital-nature.jpg" width="200px" height="320px">
+            </div>
+            <div class="book-text"><p>デジタルネイチャー<br>
+            著：落合陽一<br>
+            IT系</p>
+            <p>☆ ☆ ☆</p>
+            </div>
+          </div>
+            <div class="overview">
+              <h2>計算機が“自然”になった人間社会</h2>
+              <p>　この本では、著者の落合陽一氏が考える、「人間社会の中でデジタル技術が”自然”に存在するように
+            なる未来社会について提言している（中略）。<br>
+            IT技術の発展による社会の変化、また”デジタルネイチャー”化した中でどのように”人間”が再定義されるか
+            を考えるのに面白い一冊。</p>
+            </div>
+          </li>
+
+          <li class="list_item" data-star="☆☆" data-genre="trivia" value="9">
+            <h3>9/1000冊目</h3>
+            <div class="book-intro">
+            <div class="book-photo">
+              <img src="image/kaden.jpg" width="200px" height="320px">
+            </div>
+            <div class="book-text"><p>風姿花伝<br>
+            著：世阿弥　訳：水野聡<br>
+            雑学</p>
+            <p>☆　☆</p>
+            </div>
+            </div>
+            <div class="overview">
+            <h2>能を極めた世阿弥による理論書</h2>
+            <p>　この本は、室町時代初期の猿楽師である世阿弥が書いた能の理論書である。（中略）<br>
+            一芸を極めた人物が紡ぐ言葉の重さが心地よく、様々な媒体・歴史を経て現在も存在する
+            "表現の妙"を知るのに面白い一冊。</p>
+            </div>
+          </li>
+          <li class="list_item" data-star="☆☆☆" data-genre="magazine" value="10">
+            <h3>10/1000冊目</h3>
+            <div class="book-intro">
+            <div class="book-photo">
+              <img src="image/nonno.jpg" width="200px" height="320px">
+            </div>
+            <div class="book-text"><p>non-no<br>
+            著：講談社<br>
+            雑誌</p>
+            <p>☆　☆　☆</p>
+            </div>
+            </div>
+            <div class="overview">
+            <h2>トレンド、その最前線</h2>
+            <p>　この雑誌では流行の服装について紹介されている。（中略）<br>
+            女性の服装傾向だけでなく、注目される男性俳優について知るのに面白い一冊。</p>
+          </div>
+        </li>
+        <li class="list_item" data-star="☆" data-genre="magazine" value="10">
+          <h3>11/1000冊目</h3>
+          <div class="book-intro">
+            <div class="book-photo">
+              <img src="image/nature.jpg" width="200px" height="320px">
+            </div>
+            <div class="book-text"><p>nature<br>
+            著：サイエンス出版社<br>
+            雑誌</p>
+            <p> ☆ </p>
+            </div>
+          </div>
+          <div class="overview">
+            <h2>サイエンス専門雑誌</h2>
+            <p>　この雑誌では、世界中のサイエンス論文について取り扱われている。（中略）<br>
+            少しずつ科学の力で世界の法則が明らかになる過程が面白い一冊。</p>
+          </div>
+        </li>
+        <li class="list_item" data-star="☆☆☆" data-genre="trivia" value="11">
+          <h3>12/1000冊目</h3>
+          <div class="book-intro">
+            <div class="book-photo">
+              <img src="image/sf.jpg" width="200px" height="320px">
+            </div>
+            <div class="book-text"><p>空想科学読本16<br>
+            著：柳田理科雄<br>
+            雑学</p>
+            <p>☆　☆　☆</p>
+            </div>
+          </div>
+          <div class="overview">
+            <h2>空想世界×物理法則の思考実験</h2>
+            <p>　この本では、アニメや漫画など空想上の世界を現実世界の物理法則で測る内容である。（中略）<br>
+            娯楽として面白い本である。</p>
+          </div>
+        </li>
+        <li class="list_item" data-star="☆" data-genre="novel" value="13">
+          <h3>13/1000冊目</h3>
+          <div class="book-intro">
+            <div class="book-photo">
+              <img src="image/sonotoki.jpg" width="200px" height="320px">
+            </div>
+            <div class="book-text"><p>そのときは彼によろしく<br>
+            著：市川拓司<br>
+            小説</p>
+            <p> ☆ </p>
+            </div>
+          </div>
+          <div class="overview">
+            <h2>昔との約束</h2>
+            <p>　この本は、「いま、会いに行きます」を手掛けた市川拓司の恋愛小説である。（中略）<br>
+            映画化もされているので、小説・映像の両方を楽しめる作品です。</p>
+          </div>
+        </li>
+        <li class="list_item" data-star="☆☆" data-genre="novel" value="14">
+          <h3>14/1000冊目</h3>
+          <div class="book-intro">
+            <div class="book-photo">
+              <img src="image/insite.jpg" width="200px" height="320px">
+            </div>
+            <div class="book-text"><p>インシテミル<br>
+            著：米澤穂信<br>
+            小説</p>
+            <p>☆　☆</p>
+            </div>
+          </div>
+          <div class="overview">
+            <h2>ある人文科学的実験の悲劇</h2>
+            <p>　この本は、米澤穂信による推理小説である。（中略）<br>
+            ミステリーや密室系が好きな人におすすめの一冊。</p>
+          </div>
+        </li>
+        <li class="list_item" data-star="☆☆☆" data-genre="it" data-genre="trivia" value="15">
+            <h3>15/1000冊目</h3>
+            <div class="book-intro">
+            <div class="book-photo">
+              <img src="image/degital-nature.jpg" width="200px" height="320px">
+            </div>
+            <div class="book-text"><p>デジタルネイチャー<br>
+            著：落合陽一<br>
+            IT系</p>
+            <p>☆ ☆ ☆</p>
+            </div>
+          </div>
+            <div class="overview">
+              <h2>計算機が“自然”になった人間社会</h2>
+              <p>　この本では、著者の落合陽一氏が考える、「人間社会の中でデジタル技術が”自然”に存在するように
+            なる未来社会について提言している（中略）。<br>
+            IT技術の発展による社会の変化、また”デジタルネイチャー”化した中でどのように”人間”が再定義されるか
+            を考えるのに面白い一冊。</p>
+            </div>
+          </li>
+
+          <li class="list_item" data-star="☆☆" data-genre="trivia" value="16">
+            <h3>16/1000冊目</h3>
+            <div class="book-intro">
+            <div class="book-photo">
+              <img src="image/kaden.jpg" width="200px" height="320px">
+            </div>
+            <div class="book-text"><p>風姿花伝<br>
+            著：世阿弥　訳：水野聡<br>
+            雑学</p>
+            <p>☆　☆</p>
+            </div>
+            </div>
+            <div class="overview">
+            <h2>能を極めた世阿弥による理論書</h2>
+            <p>　この本は、室町時代初期の猿楽師である世阿弥が書いた能の理論書である。（中略）<br>
+            一芸を極めた人物が紡ぐ言葉の重さが心地よく、様々な媒体・歴史を経て現在も存在する
+            "表現の妙"を知るのに面白い一冊。</p>
+            </div>
+          </li>
+          <li class="list_item" data-star="☆☆☆" data-genre="magazine" value="17">
+            <h3>17/1000冊目</h3>
+            <div class="book-intro">
+            <div class="book-photo">
+              <img src="image/nonno.jpg" width="200px" height="320px">
+            </div>
+            <div class="book-text"><p>non-no<br>
+            著：講談社<br>
+            雑誌</p>
+            <p>☆　☆　☆</p>
+            </div>
+            </div>
+            <div class="overview">
+            <h2>トレンド、その最前線</h2>
+            <p>　この雑誌では流行の服装について紹介されている。（中略）<br>
+            女性の服装傾向だけでなく、注目される男性俳優について知るのに面白い一冊。</p>
+          </div>
+        </li>
+        <li class="list_item" data-star="☆" data-genre="magazine" value="18">
+          <h3>18/1000冊目</h3>
+          <div class="book-intro">
+            <div class="book-photo">
+              <img src="image/nature.jpg" width="200px" height="320px">
+            </div>
+            <div class="book-text"><p>nature<br>
+            著：サイエンス出版社<br>
+            雑誌</p>
+            <p> ☆ </p>
+            </div>
+          </div>
+          <div class="overview">
+            <h2>サイエンス専門雑誌</h2>
+            <p>　この雑誌では、世界中のサイエンス論文について取り扱われている。（中略）<br>
+            少しずつ科学の力で世界の法則が明らかになる過程が面白い一冊。</p>
+          </div>
+        </li>
+        <li class="list_item" data-star="☆☆☆" data-genre="trivia" value="19">
+          <h3>19/1000冊目</h3>
+          <div class="book-intro">
+            <div class="book-photo">
+              <img src="image/sf.jpg" width="200px" height="320px">
+            </div>
+            <div class="book-text"><p>空想科学読本16<br>
+            著：柳田理科雄<br>
+            雑学</p>
+            <p>☆　☆　☆</p>
+            </div>
+          </div>
+          <div class="overview">
+            <h2>空想世界×物理法則の思考実験</h2>
+            <p>　この本では、アニメや漫画など空想上の世界を現実世界の物理法則で測る内容である。（中略）<br>
+            娯楽として面白い本である。</p>
+          </div>
+        </li>
+        <li class="list_item" data-star="☆" data-genre="novel" value="20">
+          <h3>20/1000冊目</h3>
+          <div class="book-intro">
+            <div class="book-photo">
+              <img src="image/sonotoki.jpg" width="200px" height="320px">
+            </div>
+            <div class="book-text"><p>そのときは彼によろしく<br>
+            著：市川拓司<br>
+            小説</p>
+            <p> ☆ </p>
+            </div>
+          </div>
+          <div class="overview">
+            <h2>昔との約束</h2>
+            <p>　この本は、「いま、会いに行きます」を手掛けた市川拓司の恋愛小説である。（中略）<br>
+            映画化もされているので、小説・映像の両方を楽しめる作品です。</p>
+          </div>
+        </li>
+      </ul>
+    </div>
+
+        <div class="page">
+          <div class="page-navi">
+          <p><a href="">前に戻る ←</a>　(1 / 100)　<a href="">→ 次に進む</a></p>
+          </div>
+        </div>
+      </div>
+    </main>
+    <footer>
+      <div class="f-space">
+        <div class="f-left">
+          <ul>
+            <li><a href="index.html">トップ</a></li>
+            <li><a href="blog.html">ブログ</a></li>
+            <li><a href="fashion.html">ファッション</a></li>
+          </ul>
+        </div>
+        <div class="f-right">
+          <ul>
+            <li>サイトマップ</li>
+            <li>お問い合わせ</li>
+          </ul>
+        </div>
+    </footer>
+
+<script>
+$(window).on('scroll', function() {
+    $('.wrap').toggleClass('displaynone', $(this).scrollTop() > 40);
+});
+</script>
+  </body>
